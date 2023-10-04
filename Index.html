@@ -1,35 +1,139 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9"/>
     <title>AIL PROJECT</title> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <style>
+       body {
+            background-color: chartreuse;
+            max-width: none;
+            margin-left: 0%;
+            margin-right: 0%;
+            margin-bottom: 0%;
+
+        }
+       
+        .dropdown ul {
+            list-style-type: none;
+            max-width: auto;
+            min-width: none;
+            background-color: aquamarine;
+            overflow: auto;
+        }
+
+        .dropdown li {
+            float:left;
+            background-color: aquamarine;
+            padding: 0.8rem;
+        }
+
+        .dropdown ul li a {
+            text-decoration: none;
+        }
+        #menu:hover .menu_options ul{
+            display: block;
+            position: absolute;
+            z-index: 10;
+        }
+        .menu_options ul{
+            display: none;          
+        }
+        .menu_options li a:hover{
+          color:orange;
+        }
+        .menu_options li{
+            float: none;
+            text-align: center;
+            padding-bottom:0.0em ;
+        }
+
+        .menu_options ul li a {
+            text-decoration: none;
+            color: purple;
+        }
+    </style>
 </head>
 <link rel="stylesheet" href ="look.css">
 <body>
-   <h1>AIL PROJECT</h1>
-   <ul>
-       <li><a href = "#home">Home</a></li>
-       <li><a href = "#topic">Theme</a></li>
-       <li><a href = "#details">details</a></li>
-       <li><a href = "#slideshow"> About us</a></li>
-       
-   </ul>
-   <div class="topic">
-     <h2>Topic:-</h2>
-     <h2>Integration of Meghalaya/Arunachal pradesh and Uttar pradesh with our subjects and </h2>
-     <h1>Art & Craft</h1>
-   </div>
-   <div class="details" id = "details">
-     <p>HINDI</p><hr>
-     <p>ENGLISH</p><hr>
-     <p>MATHS</p><hr>
-     <p>SCIENCE</p><hr>
-     <p>SOCIAL SCIENCE</p><hr>
-   </div>
-   <div class="Instruction">
-     <h2>LET ME INDRODUCE YOU TO MY TEAM MEMBERS</BR>YOU CAN SEE REST MEMBERS BY SELECTING ONE OF THE RECTANGLE BELOW</h2>
-   </div>
+  <div class="h1" id="h1"><h1>AIL PROJECT</h1></div>
+  <div class="dropdown">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#topic">Theme</a></li>
+        <li id="menu"><a href="#h1">Subjects</a>
+            <div class="menu_options">
+                <ul>
+                    <li><a href="#1">HINDI</a></li>
+                    <li><a href="#2">ENGLISH</a></li>
+                    <li><a href="#3">MATHS</a></li>
+                    <li><a href="#4">SCIENCE</a></li>
+                    <li><a href="#5">SOCIAL SCIENCE</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#Instruction">About us</a></li>
+        <li><a href="#yo">Feedback form</a></li>
+        <li><a href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?scope=email&state=https://ail-project-86d34.web.app/&redirect_uri=https://www.htmlcommentbox.com/oauth2callback&response_type=code&client_id=1058610383547-jradgb7j4d5t6ia6dq8gaoh9fvgl01kb.apps.googleusercontent.com&approval_prompt=force&flowName=GeneralOAuthFlow">Sign-In</a></li>
+      </ul>
+    </div>
+  </ul>
+ 
+  <div class="topic" id="topic">
+     <input type ="image" src="logo.PNG" onclick="show_intro()">
+       </div>
+       <video controls id="ab">
+         <source src="INTRO.mp4">
+       </video>
+       <button id= "kk" onclick="close_video()">Click to hide the video</button>
+       <p id="kg">click to see the magic</p>
+       <p id="kf"><img src="arrow2.png"></p>
+   <button id="l1" onclick= "open_curtain()">CLICK TO REMOVE CURTAINS</button>
+     <button id="l2" onclick="close_curtain()">CLICK TO PUT BACK CURTAINS</button>
+   <div class="details" id = "subject">
+     <img src= curtain2.jpg class="curtain1">
+    <p id="1">HINDI</p><hr>
+     <div id ="F">
+       <video controls >
+         <source src="Alisha.mp4">
+       </video>
+    </div>
+      <img src= curtain2.jpg class="curtain2">
+    <p id="2">ENGLISH</p><hr>
+    <div id ="G">
+       <video controls po>
+         <source src="AYUSHI DAS.mp4" type="video/mp4">
+       </video>
+    </div>
+    <img src= curtain2.jpg class="curtain3">
+    <p id="3">MATHS</p><hr>
+    <div id ="H" class="H">
+       <video controls>
+         <source src="kanak.mp4" type="video/mp4">
+       </video>
+    </div>
+    <img src= curtain2.jpg class="curtain4">
+      <p id="4">SCIENCE</p><hr>
+       <div id ="I">
+         <video controls>
+           <source src="Abhinav.mp4" type="video/mp4">
+         </video>
+      </div>
+      <img src= curtain2.jpg class="curtain5">
+       <p id="5">SOCIAL SCIENCE</p><hr>
+        <div id ="J">
+         <video controls>
+           <source src="social science.mp4" type="video/mp4">
+         </video>
+       </div>
+     <div class="names">
+     <div class="Instruction">
+     <h1 id="Instruction">About us</h1>
+    </div>   
+    </div>
    <div class="slideshow middle" id ="slideshow">
     <div class="slides">
         <input type="radio" name="r" id="r1" checked>
@@ -38,29 +142,76 @@
         <input type="radio" name="r" id="r4">
         <input type="radio" name="r" id="r5">
      <div class="slide sl">
-        <img src="map.PNG" alt="">
+        <img src="alisha.PNG" alt="">
       </div> 
       <div class="slide">
-        <img src="map.PNG" alt="">s
+        <img src="aayushi.PNG" alt="">
       </div>
       <div class="slide">
-        <img src="map.PNG" alt="">
+        <img src="kanak.PNG" alt="">
       </div>
       <div class="slide">
-        <img src="map.PNG" alt="">
+        <img src="abhinav.PNG" alt="">
       </div>
-      <div class="slide">
-        <img src="map.PNG" alt="">
+       <div class="slide">
+        <img src="social science.PNG" alt="">
       </div>
-      <div class="navigation">
+        <div class="navigation">
           <label for="r1" class="bar"></label>
           <label for="r2" class="bar"></label>
           <label for="r3" class="bar"></label>
           <label for="r4" class="bar"></label>
           <label for="r5" class="bar"></label>
-      </div>  
+        </div>  
+      </div>
     </div>
-</div>
+  </div>
+     
+     <script>
+       console.clear();
+       function close_video(){
+        $('#ab').animate({width:0,height:0},1000);
+        $('#kk').animate({width:0},1000);
+        $('#kk').hide();
+       }
 
- </body>
-</html><a href="AIL.html"></a>
+       function show_intro(){
+        $('#topic').animate({width:10,height:1000},1000);
+         $('#ab').animate({width:400,height:200},1000);
+         $('#kk').animate({width:100},1000);
+         $('#kk').display({block},1000);
+         $('#kg').hide();
+         $('#kf').hide();
+       }
+       function open_curtain()
+       {
+         $(".curtain1").animate({width:20},1000);
+         $(".curtain2").animate({width:20},1000);
+         $(".curtain3").animate({width:20},1000);
+         $(".curtain4").animate({width:20},1000);
+         $(".curtain5").animate({width:20},1000);
+       }
+       function A(){
+         $("#q").animate({width:10},1000).animate_direction(outside);
+         $("#r").animate({width:10},1000).animate_direction(outside);
+       }
+       function B(){
+         $("#q").animate({width:250},1000).animate_direction(outside);
+         $("#r").animate({width:250},1000).animate_direction(outside);
+       }
+       function close_curtain(){
+        $(".curtain1").animate({width:642},1000);
+        $(".curtain2").animate({width:642},1000);
+        $(".curtain3").animate({width:642},1000);
+        $(".curtain4").animate({width:642},1000);
+        $(".curtain5").animate({width:642},1000);
+       }
+     </script>
+  <script async src="https://drv.tw/inc/wd.js"></script></body>
+  <footer id="la">
+    <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+    <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+    <script type="text/javascript" id="hcb">if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24POigWanwFCYbk72IXZMN3%2F"+"&opts=16862&num=10&ts=1609854119259");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+    <hr class="yo" id="yo">
+  </footer>
+</html>
